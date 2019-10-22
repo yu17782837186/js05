@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<title>js的window对象一</title>
+		<meta charset="UTF-8"/>
+		<script type="text/javascript">
+			//警告框
+			function testAlert(){
+				var a=alert("警告框");
+				alert(a);//警告框没有返回值
+			}
+			//确认框
+			function testConfirm(){
+				var c=confirm("你确定删除吗？");
+				alert(c);//确认框有返回值 true和false
+			}
+			//提示框
+			function testPrompt(){
+				var s=prompt("请输入昵称:");
+				alert(s);//提示框有返回值 没有输入返回空字符串
+			}
+//-------------------------------------------------------------------------------
+			var id1;
+			var id2;
+			//定时执行
+			function testSetTimeout(){
+				id1=setTimeout(function(){
+					alert("定时执行")
+				},3000);//setTimeout() 参数1：函数 参数2：毫秒数
+			}
+			
+			//间隔执行
+			function testSetInterval(){
+				id2=setInterval(function(){
+					alert("间隔执行")
+				},2000);//setInterval() 参数1：函数 参数2：间隔的毫秒数
+			}
+			
+			//停止定时执行的方法
+			function testClearTimeout(){
+				clearTimeout(id1);
+			}
+			
+			//停止间隔执行
+			function testClearInterval(){
+				clearInterval(id2);
+			}
+		</script>
+	</head>
+	<body>
+		<h3>js的window对象一</h3>
+		<input type="button" name="" id="" value="警告框" onclick="testAlert();"/>
+		<input type="button" name="" id="" value="确认框" onclick="testConfirm();"/>
+		<input type="button" name="" id="" value="提示框" onclick="testPrompt();"/>
+		<hr />
+		<input type="button" name="" id="" value="定时执行" onclick="testSetTimeout();"/>
+		<input type="button" name="" id="" value="间隔执行" onclick="testSetInterval();"/>
+		<input type="button" name="" id="" value="停止定时执行" onclick="testClearTimeout();"/>
+		<input type="button" name="" id="" value="停止定时间隔执行" onclick="testClearInterval();"/>
+	</body>
+</html>

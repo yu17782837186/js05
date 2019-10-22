@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>子页面</title>
+		<meta charset="UTF-8"/>
+		<script type="text/javascript">
+			//倒计时
+			function testTime(){
+				window.setInterval(function(){
+					var span=document.getElementById("time");
+					span.innerHTML=span.innerHTML-1;
+					//关闭子页面
+					if(span.innerHTML==0){
+						window.close();
+					}
+				},1000);
+			}
+			//调用父页面函数
+			function testFa(){
+				window.opener.testFather();
+			}
+			
+		</script>
+	</head>
+	<body onload="testTime()">
+		<h3>子页面</h3>
+		<hr />
+		<b>欢迎访问子页面，<span id="time" style="color:red; font-size: 50px;">5</span>秒后页面关闭</b><br />
+		<input type="button" name="" id="" value="访问父页面" onclick="testFa();"/>
+	</body>
+</html>

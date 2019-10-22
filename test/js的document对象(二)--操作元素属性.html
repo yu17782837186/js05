@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<title>js的document对象操作html元素属性</title>
+		<meta charset="UTF-8"/>
+		<script type="text/javascript">
+			//获取元素属性值
+			function testField(){
+				//获取元素对象
+				var inp=document.getElementById("uname");
+				//获取元素属性
+				alert(inp.type+":"+inp.name+":"+inp.id+":"+inp.value);	
+			}
+			
+			//修改元素属性值
+			function testField2(){
+				//获取元素大对象
+				var inp=document.getElementById("uname");
+				//修改元素属性
+				inp.value="哈哈哈哈哈";
+				inp.type="button";
+			}
+			
+			//自定义属性
+			function testOwnField(){
+				//获取元素对象
+				var inp=document.getElementById("uname");
+				//获取自定义属性的值
+//				alert(inp.abc);//不能这样获取
+				alert(inp.getAttribute("abc"));
+			}
+			
+			//修改
+			function testOwnField2(){
+				//获取元素对象
+				var inp=document.getElementById("uname");
+				//修改自定义的属性值
+				inp.setAttribute("abc","是你，是你");
+			}
+			
+			//使用自定义方式操作固有属性
+			function testOper(){
+				//获取元素对象
+				var inp=document.getElementById("uname");
+				//操作元素对象
+//				alert(inp.getAttribute("type"));
+				alert(inp.getAttribute("value"));//只能拿到value的默认值
+				
+			}
+		</script>
+	</head>
+	<body>
+		<h3>js的document对象操作html元素属性</h3>
+		<input type="button" name="" id="" value="获取元素的属性--固有" onclick="testField();"/>
+		<input type="button" name="" id="" value="修改元素的属性--固有" onclick="testField2();"/>
+		<input type="button" name="" id="" value="获取元素的属性--自定义属性" onclick="testOwnField();"/>
+		<input type="button" name="" id="" value="修改元素的属性--自定义属性" onclick="testOwnField2();"/>
+		<input type="button" name="" id="" value="自定义方式操作固有属性" onclick="testOper();"/>
+		<hr />
+		用户名:<input type="text" name="uname" id="uname" value="" abc="黑黑黑"/>
+	</body>
+</html>

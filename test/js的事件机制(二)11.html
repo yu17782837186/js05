@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<title>js的事件机制二</title>
+		<meta charset="UTF-8"/>
+		<script type="text/javascript">
+			function testOnchange(){
+				alert("改变了");
+			}
+			function test(){
+				alert("事件阻断");
+//				return false; //false的时候不会跳转
+				return true;
+			}
+			function testHref(){
+				alert("超链接调用js函数");
+			}
+		</script>
+	</head>
+	<body>
+		<h3>js的事件机制二</h3>
+		<hr />
+		<select name="" id="" onchange="testOnchange();">
+			<option value="">西安</option>
+			<option value="">上海</option>
+			<option value="">北京</option>
+		</select>
+		<hr />
+		事件的阻断：<br />
+		<a href="http://www.baidu.com" target="_blank" onclick="return test();">百度</a>
+		<hr />
+		超链接调用js函数：<br />
+		<a href="javascript:testHref()">调用</a><!--不加括号返回的是函数内容，加括号执行-->
+	</body>
+</html>
